@@ -1,0 +1,25 @@
+
+<div class="header-center">
+	<div class="header-stretch">
+		<h2>Избранное</h2>
+		<!--<input type="text" [formControl]="searchBooksCtrl">-->
+	</div>
+</div>
+
+<div class="card-container">
+	<ng-container *ngIf="(books$ | async) as books">
+		<a class="card" target="_blank" [href]="book.infoLink" *ngFor="let book of books; trackBy: booksTrackBy">
+			<img class="fav-icon"
+				 [src]="'assets/' + (book?.favorite ? 'star-24px.svg' : 'star_border-24px.svg')"
+				 (click)="$event.preventDefault(); onToggleFavorite(book)"
+			>
+
+			<ng-container [ngSwitch]="!!book?.smallThumbnail">
+				<img *ngSwitchCase="true" [src]="book?.smallThumbnail" class="book-cover">
+				<span *ngSwitchCase="false">{{book?.title}}</span>
+			</ng-container>
+		</a>
+	</ng-container>
+</div>
+
+

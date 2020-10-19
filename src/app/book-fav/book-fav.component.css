@@ -1,0 +1,90 @@
+
+:host {
+	display: flex;
+	flex-direction: column;
+	max-width: 960px;
+}
+
+.header-center {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.header-stretch {
+	display: flex;
+	flex-direction: column;
+}
+
+a {
+	text-decoration: none;
+}
+
+.card-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 16px;
+}
+
+.card {
+	position: relative;
+	max-width: 150px;
+	width: 150px;
+	border-radius: 4px;
+	border: 1px solid #eee;
+	background-color: #fafafa;
+	margin: 0 8px 16px;
+	padding: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.2s ease-in-out;
+	line-height: 24px;
+}
+
+.card-container .card:not(:last-child) {
+	margin-right: 0;
+}
+
+.card.card-small {
+	height: 16px;
+	width: 168px;
+}
+
+.card-container .card:hover {
+	/*transform: translateY(-3px);*/
+	box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+}
+
+.fav-icon {
+	position: absolute;
+	top: -7px;
+	left: -7px;
+	min-width: 24px;
+	min-height: 24px;
+	padding: 0 24px 24px 0;
+}
+
+.fav-icon:hover {
+	padding: 0;
+	transform: scale(2);
+}
+
+.book-cover {
+	max-width: 100%;
+	min-width: 100%;
+}
+
+
+@media screen and (max-width: 767px) {
+	.card-container > * {
+		width: 100%;
+	}
+
+	.card {
+		margin: 8px 0;
+	}
+}
+
